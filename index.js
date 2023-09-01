@@ -1,11 +1,3 @@
-// opsi 1 integrase ke spotify, endpoint audio analysis, audio playback, recommendation
-
-// opsi 2 buat restapi + crud + sql, bikin table songs, fieldnya artis, judul, is_favorite, genre, 
-// buat endpoint
-// nambah lagu, update lagu, delete lagu,
-// menampilkan semua lagu, menampilkan lagu berdasarkan genre,
-//  menampilkan lagu berdasarkan favorite
-
 import express from 'express';
 import SongService from './services/songServices.js'
 
