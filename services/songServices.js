@@ -82,7 +82,7 @@ export const updateForSong = async (request, response, next) => {
     }
 }
 
-export const deleteForSong = async (response, request, next) => {
+export const deleteForSong = async (request, response, next) => {
     try {
         let id = request.params.id;
         const [result] = await SongRepo.deleteSong(id);
