@@ -37,6 +37,18 @@ export const getGenreSongs = async (request, response, next) => {
     };
 }
 
+export const getByIdSong = async (request, response, next) => {
+
+    try {
+        let id = request.params.id;
+        const [result] = await SongRepo.getSongById(id);
+
+        successResp(response, "sukses", result);
+    } catch (error) {
+        next(error);
+    };
+}
+
 export const createNewSong = async (request, response, next) => {
 
     try {
@@ -71,10 +83,8 @@ export const updateForSong = async (request, response, next) => {
 }
 
 export const deleteForSong = async (response, request, next) => {
-
     try {
         let id = request.params.id;
-
         const [result] = await SongRepo.deleteSong(id);
         successResp(response, "data berhasil dihapus", result[0]);
     } catch (error) {

@@ -39,13 +39,21 @@ export const deleteSong = (id) => {
 }
 
 export const getSongByGenre = (genre) => {
-    const sql = "SELECT id, artis, judul, is_favorite, genre, created_at, updated_at FROM songs WHERE genre =?";
+    const sql = "SELECT * FROM songs WHERE genre =?";
     const values = [genre];
     return db.query(sql, values);
 }
 
 export const getSongByFavorite = (is_favorite) => {
-    const sql = "SELECT id, artis, judul, is_favorite, genre, created_at, updated_at FROM songs WHERE is_favorite =?";
+    const sql = "SELECT * FROM songs WHERE is_favorite =?";
     const values = [is_favorite];
     return db.query(sql, values);
 }
+
+export const getSongById = (id) => {
+    const sql = "SELECT id, artis, judul, is_favorite, genre, created_at, updated_at FROM songs WHERE id =?";
+    const values = [id];
+
+    return db.query(sql, values);
+}
+
